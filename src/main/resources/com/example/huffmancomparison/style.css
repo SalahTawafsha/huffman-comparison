@@ -1,0 +1,102 @@
+.button {
+    -fx-background-color: rgb(255, 0, 0, 0.5);
+    -fx-background-radius: 40;
+    -fx-border-color: black;
+    -fx-border-radius: 40;
+    -fx-text-fill: white;
+    -fx-font-family: "Comic Sans MS";
+    -fx-min-width: 150;
+    -fx-min-height: 60;
+}
+
+.list-cell:hover {
+    -fx-background-color: purple;
+    -fx-text-fill: white;
+
+}
+
+.list-cell:even:hover {
+    -fx-background-color: purple;
+    -fx-text-fill: white;
+}
+
+.list-cell:filled:even { /* <=== changed to even */
+    -fx-background-color: rgb(255, 0, 0, 0.5);
+    -fx-text-fill: white;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.list-cell:empty {
+    -fx-background-color: rgba(255, 99, 71, 0);
+
+}
+
+.list-view {
+    -fx-background-radius: 40;
+    -fx-border-radius: 40;
+    -fx-background-color: rgba(255, 99, 71, 0);
+    -fx-min-width: 400;
+}
+
+.list-view.text-area {
+    -fx-background-radius: 40;
+    -fx-border-radius: 40;
+}
+
+.list-cell, .list-cell:focused {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+
+}
+
+
+/* to remove track background of scroll bar */
+.list-view .virtual-flow .scroll-bar:vertical,
+.list-view .virtual-flow .scroll-bar:vertical .track,
+.list-view .virtual-flow .scroll-bar:vertical .track-background,
+.list-view .virtual-flow .scroll-bar:horizontal,
+.list-view .virtual-flow .scroll-bar:horizontal .track,
+.list-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+/*
+ * to remove button of scroll bar 
+*/
+.list-view .virtual-flow .scroll-bar .increment-button,
+.list-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0.0;
+    -fx-padding: 2.0;
+}
+
+.list-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, rgb(255, 0, 0, 0.5), #ffd1d1);
+}
+
+.progress-bar {
+    -fx-background-color: linear-gradient(to right, rgb(255, 0, 0, 0.5), #ffd1d1);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0, 1;
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+    -fx-min-width: 400;
+}
+
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #ffd1d1, rgb(255, 0, 0, 0.5));
+    -fx-background-radius: 20;
+}
+
+.progress-bar .track {
+    -fx-background-radius: 20;
+
+}
+
+
