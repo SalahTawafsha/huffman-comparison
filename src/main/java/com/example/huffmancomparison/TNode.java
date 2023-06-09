@@ -1,4 +1,4 @@
-package com.example.huffman_project;
+package com.example.huffmancomparison;
 
 import java.util.Stack;
 
