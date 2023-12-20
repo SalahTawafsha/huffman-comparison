@@ -3,6 +3,6 @@ module com.example.huffmancomparison {
     requires javafx.fxml;
 
 
-    opens com.example.huffmancomparison to javafx.fxml;
-    exports com.example.huffmancomparison;
+    opens com.example.huffmancomparison.view to javafx.fxml;
+    exports com.example.huffmancomparison.view;
 }

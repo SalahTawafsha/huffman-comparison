@@ -1,4 +1,4 @@
-package com.example.huffmancomparison;
+package com.example.huffmancomparison.model;
 
 import java.util.Stack;
 
@@ -55,14 +55,14 @@ public class TNode implements Comparable<TNode> {
         return frequency;
     }
 
-    public String traverse() {
-        return traverse(this);
+    public String postOrderTraverse() {
+        return postOrderTraverse(this);
     }
 
 
-    private String traverse(TNode curr) {
+    private String postOrderTraverse(TNode curr) {
         if (curr != null)
-            return traverse(curr.left) + traverse(curr.right) + curr;
+            return postOrderTraverse(curr.left) + postOrderTraverse(curr.right) + curr; // it curr.toSting()
 
         return "";
     }
@@ -115,7 +115,7 @@ public class TNode implements Comparable<TNode> {
     @Override
     public String toString() {
         if (byteData != null)
-            return "0" + HelloApplication.toBinaryString(byteData);
+            return "0" + BinaryConverter.toBinaryString(byteData);
         else
             return "1";
     }
