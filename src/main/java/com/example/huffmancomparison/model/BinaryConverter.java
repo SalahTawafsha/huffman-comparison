@@ -6,7 +6,7 @@ public class BinaryConverter {
         int pow = 0;
         for (int j = substring.length() - 1; j >= 0; j--, pow++) {
             if (substring.charAt(j) == '1')
-                i += 1 << pow;
+                i += (byte) (1 << pow);
         }
         return i;
     }
@@ -15,7 +15,7 @@ public class BinaryConverter {
         StringBuilder s = new StringBuilder("00000000");
         if (b < 0) {
             s.replace(0, 1, "1");
-            b += 128;
+            b += (byte) 128;
         }
         if (b - 64 >= 0) {
             s.replace(1, 2, "1");

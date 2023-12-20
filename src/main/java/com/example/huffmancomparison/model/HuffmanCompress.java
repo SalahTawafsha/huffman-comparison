@@ -1,6 +1,5 @@
 package com.example.huffmancomparison.model;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -43,7 +42,6 @@ public class HuffmanCompress {
     }
 
 
-
     public void compress() {
         if (input == null) throw new IllegalArgumentException("File must be not null");
 
@@ -74,7 +72,7 @@ public class HuffmanCompress {
         } catch (IOException e) {
             listView.add(e.getMessage());
             progress = 0;
-            isRunning=false;
+            isRunning = false;
             return;
         }
 
@@ -219,17 +217,7 @@ public class HuffmanCompress {
             out.close();
 
             // show file in the folder path
-            Platform.runLater(() ->
-                    {
-                        try {
-                            Runtime.getRuntime().exec("explorer /select, " + input.getName().substring(0, input.getName().lastIndexOf(".")) + ".huf");
-                        } catch (IOException e) {
-                            listView.clear();
-                            listView.add(e.getMessage());
-                            progress = 0;
-                        }
-                    }
-            );
+            Runtime.getRuntime().exec("explorer /select, " + input.getName().substring(0, input.getName().lastIndexOf(".")) + ".huf");
 
         } catch (IOException e) {
             listView.clear();
