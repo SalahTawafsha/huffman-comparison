@@ -31,13 +31,13 @@ public class Main extends Application {
         compressionFileChooser.setInitialDirectory(new File("."));
 
         // button that opens file chooser
-        Button compressionButton = new Button("Select File to compression");
+        Button compressionButton = new Button("Select file to compress");
         VBox compressionBox = new VBox(20, compressionButton);
         compressionBox.setAlignment(Pos.CENTER);
 
         // create file chooser of huffman file to uncompress it
         FileChooser uncompressionFileChooser = new FileChooser();
-        uncompressionFileChooser.setTitle("Select File to uncompressed");
+        uncompressionFileChooser.setTitle("select file to uncompress");
         uncompressionFileChooser.setInitialDirectory(new File("."));
         uncompressionFileChooser.getExtensionFilters()
                 .add(new FileChooser

@@ -50,17 +50,17 @@ public class HuffmanCompress {
         for (int i = 0; i < bytes.length; i++)
             bytes[i] = new TNode((byte) i, 0);
 
-        long l;
+        long fileSize;
         int countOfBytes = 0;
         try (FileInputStream scan = new FileInputStream(input)) {
-            l = Files.size(Path.of(input.getPath()));
+            fileSize = Files.size(Path.of(input.getPath()));
 
             byte[] buffer = new byte[8 * 1024];
 
             int j, count = 0;
             while ((j = scan.read(buffer)) != -1) {
                 count += j;
-                progress = (1 - ((double) (l - count) / l)) / 2;
+                progress = (((double) count / fileSize)) / 2;
                 for (int i = 0; i < j; i++)
                     if (buffer[i] < 0) countOfBytes += bytes[buffer[i] + 256].increment();
                     else countOfBytes += bytes[buffer[i]].increment();
@@ -72,7 +72,6 @@ public class HuffmanCompress {
         } catch (IOException e) {
             listView.add(e.getMessage());
             progress = 0;
-            isRunning = false;
             return;
         }
 
@@ -111,7 +110,6 @@ public class HuffmanCompress {
             } else {
                 listView.add("Can' compress file !!");
                 progress = 0;
-                isRunning = false;
                 return;
             }
         }
@@ -213,8 +211,8 @@ public class HuffmanCompress {
                 out.write((byte) bitsInLastByte);
             } else out.write(8);
 
-            progress = 1;
             out.close();
+            progress = 1;
 
             // show file in the folder path
             Runtime.getRuntime().exec("explorer /select, " + input.getName().substring(0, input.getName().lastIndexOf(".")) + ".huf");
