@@ -25,7 +25,7 @@ When the user click on select file to compress
 - while compress the file, the program will show progress bar to the user.
 - System will build a Huffman tree based on the frequency of the characters.
 - it will generate a code for each character based on the Huffman tree.
-- when end compress the program will show the huffman tree and the code for each character.
+- when end compress the program will show the frequency and the code for each character.
 - finally, it will write the compressed data to the disk.
 <br>
 
