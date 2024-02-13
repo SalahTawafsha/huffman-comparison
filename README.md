@@ -21,11 +21,11 @@ The UI is so simple, it contains two buttons, select file to compress and select
 When the user click on select file to compress
 
 - FileChooser will be opened to select the file that he want
-- the program will read the file and calculate the frequency of each character in the file.
+- the program will read the file and calculate the frequency of each byte in the file.
 - while compress the file, the program will show progress bar to the user.
-- System will build a Huffman tree based on the frequency of the characters.
-- it will generate a code for each character based on the Huffman tree.
-- when end compress the program will show the frequency and the code for each character.
+- System will build a Huffman tree based on the frequency of the byte.
+- it will generate a code for each byte based on the Huffman tree.
+- when end compress the program will show the frequency and the code for each byte.
 - finally, it will write the compressed data to the disk.
 <br>
 
@@ -37,7 +37,7 @@ after click on select file to compress, FileChooser will be opened to select the
 <br>
 after select the file, the program will start compress the file and show the progress bar to the user.
 
-when the compressing is done, the program will show the Huffman tree and the code for each character.
+when the compressing is done, the program will show the Huffman tree and the code for each byte.
 <br>
 <img src="https://github.com/SalahTawafsha/huffman-comparison/assets/93351227/8531ab5f-aa67-4549-a791-8b66733b1d45" alt="Compressing" width="400">
 
